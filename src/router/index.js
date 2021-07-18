@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import CreateGame from '../views/CreateGame.vue'
+import Index from '../views/Index.vue'
 
 Vue.use(VueRouter)
 
@@ -14,6 +15,10 @@ const routes = [
   {
     path: '/create-game',
     component: CreateGame,
+  },
+  {
+    path: '/index',
+    component: Index,
   },
   {
     path: '/about',

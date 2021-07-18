@@ -25,11 +25,18 @@
             <v-row class="form">
                 <v-select
                     :items="timedropdown"
+                    @click="submit"
                 ></v-select>
+                <!--@는 v-on과 같음-->
             </v-row>
         </v-form>
 
-        <router-link to="/"><v-btn elevation="2">go to main</v-btn></router-link>
+        <router-link to="/">
+            <v-btn
+                elevation="2"
+
+            >게임 생성하기</v-btn>
+        </router-link>
         <!--a와 비슷한 기능. 페이지 리로드 차단-->
     </div>
 </template>
