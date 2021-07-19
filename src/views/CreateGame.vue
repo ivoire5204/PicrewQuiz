@@ -30,14 +30,19 @@
                 <!--@는 v-on과 같음-->
             </v-row>
         </v-form>
+        <v-row>
+            <router-link to="/">
+                <v-btn elevation="2">게임 생성하기</v-btn>
+            </router-link>
+        </v-row>
+        <!--a와 비슷한 기능. 페이지 리로드 차단-->        
+        <v-row>
+            <router-link to="/index">
+                <v-btn elevation="2">메인</v-btn>
+            </router-link>
+        </v-row>
+        
 
-        <router-link to="/">
-            <v-btn
-                elevation="2"
-
-            >게임 생성하기</v-btn>
-        </router-link>
-        <!--a와 비슷한 기능. 페이지 리로드 차단-->
     </div>
 </template>
 <script>
@@ -66,6 +71,9 @@ h1 {
 }
 .row, button {
     margin-left: 30px;
+}
+button {
+    margin-bottom: 20px;
 }
 .form {
     margin-bottom: 30px;
