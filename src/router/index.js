@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
 import CreateGame from '../views/CreateGame.vue'
 import Index from '../views/Index.vue'
 
@@ -8,17 +7,17 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
-    name: 'Home',
-    component: Home
-  },
-  {
     path: '/create-game',
     component: CreateGame,
   },
   {
-    path: '/index',
+    path: '/',
     component: Index,
+  },
+  //임시
+  {
+    path: '/000000000000',
+    component: () => import('../views/GameDetails.vue')
   },
   {
     path: '/about',
@@ -29,6 +28,16 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   }
 ]
+
+/*
+서버에서 게임 데이터 가져오기, 모든 path를 GameDetails로 연결
+routes.push(
+  {
+    path: '/000000000000',
+    component: () => import('../views/GameDetails.vue')
+  }
+)
+*/
 
 const router = new VueRouter({
   mode: 'history',

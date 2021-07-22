@@ -10,29 +10,32 @@
         </div>
         <div id="nowplaying">
             <h3>진행중인 게임</h3>
-            <v-btn id="leftarrow" elevation="0" fab>&#60;</v-btn>
-            <div class="gamecontent" v-bind="gamedata">
-                <!--v-for 사용-->
-                <v-img src=""></v-img>
-                <p>{{ gamedata.username }}님의 게임</p>
-                <p><a href="picrewlink">{{ gamedata.picrewlink }}</a></p>
-                <p>{{ gamedata.status }}</p>
-                <p>남은 시간 {{ gamedata.timeleft }}</p>
-            </div>
-            <v-btn id="rightarrow" elevation="0" fab>&#62;</v-btn>
-        </div>
-        <div id="archive">
-            <h3>아카이브</h3>
-            <v-btn id="leftarrow" elevation="0" fab>&#60;</v-btn>
+            <v-btn class="arrowbtn" elevation="0" fab>&#60;</v-btn>
             <div class="gamecontent">
                 <!--v-for 사용-->
-                <v-img src=""></v-img>
-                <p>{{ gamedata.username }}님의 게임</p>
-                <p><a href="picrewlink">{{ gamedata.picrewlink }}</a></p>
-                <p>{{ gamedata.status }}</p>
-                <p>남은 시간 {{ gamedata.timeleft }}</p>
+                <router-link to="/000000000000">
+                    <v-img class="thumbnail" v-bind:src="gamecontent.thumbnailsrc"></v-img>
+                    <p>{{ gamecontent.username }}님의 게임</p>
+                </router-link>
+                <p><a href="picrewlink">{{ gamecontent.picrewlink }}</a></p>
+                <p>{{ gamecontent.status }}</p>
+                <p>남은 시간 {{ gamecontent.timeleft }}</p>
             </div>
-            <v-btn id="rightarrow" elevation="0" fab>&#62;</v-btn>
+            <v-btn class="arrowbtn" elevation="0" fab>&#62;</v-btn>
+        </div>
+        <div id="archive">
+            <h3 style="clear:both;">아카이브</h3>
+            <v-btn class="arrowbtn" elevation="0" fab>&#60;</v-btn>
+            <div class="archive">
+                <!--v-for 사용-->
+                <a href="">
+                    <v-img class="thumbnail" v-bind:src="gamecontent.thumbnailsrc"></v-img>
+                    <p>{{ gamecontent.username }}님의 게임</p>
+                </a>
+                <p><a href="picrewlink">{{ archive.picrewlink }}</a></p>
+                <p>남은 시간 {{ archive.timeleft }}</p>
+            </div>
+            <v-btn class="arrowbtn" elevation="0" fab>&#62;</v-btn>
         </div>
     </div>
 </template>
@@ -46,9 +49,19 @@ export default {
         console.log("으악, 저를 버리고 가지 말아요!");
     },
     data: () => ({
-        timedropdown: ['5분', '10분', '15분', '20분', '30분', '1시간', '2시간'],
-        gamedata: {
-
+        gamecontent: {
+            thumbnailsrc: "https://s3-ap-northeast-2.amazonaws.com/mastodon-planet-moe/cache/preview_cards/images/000/170/295/original/70bd094986a23b72.png",
+            username: "User@server.com",
+            picrewlink: "https://picrew.me/image_maker/614354",
+            status: "신청 받는 중",
+            timeleft: "00:00:00"
+        },
+        archive: {
+            thumbnailsrc: "https://s3-ap-northeast-2.amazonaws.com/mastodon-planet-moe/cache/preview_cards/images/000/170/295/original/70bd094986a23b72.png",
+            username: "User@server.com",
+            picrewlink: "https://picrew.me/image_maker/614354",
+            status: "신청 받는 중",
+            timeleft: "00:00:00"
         }
     })
 }
@@ -58,11 +71,20 @@ export default {
 </script>
 
 <style>
-    #leftarrow, #rightarrow {
+    .gamecontent, .archive {
+        border: 1px solid;
+        width: 250px;
+        text-align: center;
+        margin: 0px 20px;
+        float: left;
+    }
+    .arrowbtn {
+        float: left;
         background-color: #00000000;
         font-size: 30px;
     }
-    .gamecontent {
-        border-width: 1px;
+    .thumbnail {
+        width: 200px;
+        margin: 0px auto;
     }
 </style>

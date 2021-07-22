@@ -37,7 +37,7 @@
         </v-row>
         <!--a와 비슷한 기능. 페이지 리로드 차단-->        
         <v-row>
-            <router-link to="/index">
+            <router-link to="/">
                 <v-btn elevation="2">메인</v-btn>
             </router-link>
         </v-row>
