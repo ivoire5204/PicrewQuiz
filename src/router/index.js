@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import CreateGame from '../views/CreateGame.vue'
 import Index from '../views/Index.vue'
+import CreateGame from '../views/CreateGame.vue'
 
 Vue.use(VueRouter)
 

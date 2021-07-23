@@ -1,9 +1,5 @@
 <template>
     <div>
-        <header>
-            <h1>{{ username }} 님의 게임</h1>
-            <p>{{ timecreated }} 생성됨</p>
-        </header>
         <p id="status">이미 종료된 게임이에요!</p>
         <div id="gallery">
             <v-btn id="leftarrow" elevation="0" fab>&#60;</v-btn>
