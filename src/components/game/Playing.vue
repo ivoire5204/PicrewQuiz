@@ -29,9 +29,14 @@
 
 <script> 
 export default {
+    mounted() {
+        console.log("으악, 저를 구현해 주세요! x_x");
+    },
+    beforeDestroy() {
+        console.log("으악, 저를 버리고 가지 말아요!");
+    },
     data: () => ({
         // 서버에서 status 값 가져오기
-        status: 'playing',
         username: "User@server.com",
         appliers: [
             "Ann@server.com",
