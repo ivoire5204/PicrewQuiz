@@ -1,13 +1,13 @@
 <template>
     <div>
         <h1>연합우주 픽크루 가족오락관</h1>
-        <div>
+        <header>
             <h3>픽크루 가족오락관이란?</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex amet iure culpa labore cupiditate. Facilis exercitationem atque nobis. Odit nesciunt, natus illo eveniet consectetur quibusdam dolor ullam culpa earum error?</p>
+                <p>다양한 아티스트의 템플릿으로 이미지를 만드는 플랫폼 픽크루를 이용해 친구들과 함께 그림을 맞춰보는 게임입니다!<br> 제안자가 원하는 픽크루 템플릿과 함께 게임을 생성하면, 참가자들이 해당 템플릿으로 만든 이미지를 제출하고, 제출한 이미지를 모아 게임을 시작합니다. </p>
             <router-link to="/create-game">
                 <v-btn>새 게임 생성하기</v-btn>
             </router-link>
-        </div>
+        </header>
         <div id="nowplaying">
             <h3>진행중인 게임</h3>
             <v-btn class="arrowbtn" elevation="0" fab>&#60;</v-btn>
