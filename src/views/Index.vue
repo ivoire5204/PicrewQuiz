@@ -14,7 +14,7 @@
         <section id="nowplaying">
             <h3>진행중인 게임</h3>
             <v-btn class="arrowbtn" elevation="0" fab>&#60;</v-btn>
-            <div class="gamecontent" v-for="(content, index) in nowplaying" v-bind:key="index">
+            <div class="contentbox" v-for="(content, index) in nowplaying" v-bind:key="index">
                 <router-link to="/000000000000">
                     <v-img class="thumbnail" v-bind:src="content.thumbnailsrc"></v-img>
                     <p>{{ content.username }}님의 게임</p>
@@ -22,19 +22,20 @@
                 <p><a href="picrewlink">{{ content.picrewlink }}</a></p>
                 <p>{{ content.status }}</p>
                 <p>남은 시간 {{ content.timeleft }}</p>
-            </div>d
+            </div>
             <v-btn class="arrowbtn" elevation="0" fab>&#62;</v-btn>
         </section>
-        <section id="archive">
-            <h3 style="clear:both;">아카이브</h3>
+        <section id="archives">
+            <h3>아카이브</h3>
             <v-btn class="arrowbtn" elevation="0" fab>&#60;</v-btn>
-            <div class="archive">
-                <!--v-for 사용-->
-                <a href="">
-                    <v-img class="thumbnail" v-bind:src="gamecontent.thumbnailsrc"></v-img>
-                    <p>{{ gamecontent.username }}님의 게임</p>
-                </a>
-                <p><a href="picrewlink">{{ archive.picrewlink }}</a></p>
+            <div class="contentbox" v-for="(content, index) in archives" v-bind:key="index">
+                <router-link to="/000000000000">
+                    <v-img class="thumbnail" v-bind:src="content.thumbnailsrc"></v-img>
+                    <p>{{ content.username }}님의 게임</p>
+                </router-link>
+                <p><a href="picrewlink">{{ content.picrewlink }}</a></p>
+                <p>{{ content.status }}</p>
+                <p>남은 시간 {{ content.timeleft }}</p>
             </div>
             <v-btn class="arrowbtn" elevation="0" fab>&#62;</v-btn>
         </section>
@@ -49,21 +50,7 @@ export default {
     beforeDestroy() {
         console.log("으악, 저를 버리고 가지 말아요!");
     },
-    data: () => ({/*
-        gamecontent: {
-            thumbnailsrc: "https://s3-ap-northeast-2.amazonaws.com/mastodon-planet-moe/cache/preview_cards/images/000/170/295/original/70bd094986a23b72.png",
-            username: "User@server.com",
-            picrewlink: "https://picrew.me/image_maker/614354",
-            status: "신청 받는 중",
-            timeleft: "00:00:00"
-        },*/
-        archive: {
-            thumbnailsrc: "https://s3-ap-northeast-2.amazonaws.com/mastodon-planet-moe/cache/preview_cards/images/000/170/295/original/70bd094986a23b72.png",
-            username: "User@server.com",
-            picrewlink: "https://picrew.me/image_maker/614354",
-            status: "신청 받는 중",
-            timeleft: "00:00:00"
-        },
+    data: () => ({
         nowplaying: [
             { content: {
                     thumbnailsrc: "https://s3-ap-northeast-2.amazonaws.com/mastodon-planet-moe/cache/preview_cards/images/000/170/295/original/70bd094986a23b72.png",
@@ -86,10 +73,33 @@ export default {
                     status: "신청 받는 중",
                     timeleft: "00:00:00"
             }}        
+        ],
+        archives: [
+            { content: {
+                    thumbnailsrc: "https://s3-ap-northeast-2.amazonaws.com/mastodon-planet-moe/cache/preview_cards/images/000/170/295/original/70bd094986a23b72.png",
+                    username: "User@server.com",
+                    picrewlink: "https://picrew.me/image_maker/614354",
+                    status: "신청 받는 중",
+                    timeleft: "00:00:00"
+            }},
+            { content: {
+                    thumbnailsrc: "https://s3-ap-northeast-2.amazonaws.com/mastodon-planet-moe/cache/preview_cards/images/000/170/295/original/70bd094986a23b72.png",
+                    username: "User@server.com",
+                    picrewlink: "https://picrew.me/image_maker/614354",
+                    status: "신청 받는 중",
+                    timeleft: "00:00:00"
+            }},
+            { content: {
+                    thumbnailsrc: "https://s3-ap-northeast-2.amazonaws.com/mastodon-planet-moe/cache/preview_cards/images/000/170/295/original/70bd094986a23b72.png",
+                    username: "User@server.com",
+                    picrewlink: "https://picrew.me/image_maker/614354",
+                    status: "신청 받는 중",
+                    timeleft: "00:00:00"
+            }}        
         ]
+
     })
 }
-
 </script>
 
 <style>
@@ -100,21 +110,23 @@ export default {
     #introduction {
        margin: 0px 30px 90px 30px;
     }
-    #introduction > h3 {
+    h3 {
         margin-bottom: 20px;
     }
     #introduction > p {
         margin-bottom: 40px;
     }
-    #nowplaying, #archive {
+    #nowplaying, #archives {
         margin: 0px 30px 90px 30px;
+        padding-bottom: 300px;
     }
     #creategamebtn {
         margin: 0px;
     }
-    .gamecontent, .archive {
+    .contentbox {
         border: 1px solid;
         width: 250px;
+        height: 300px;
         text-align: center;
         margin: 0px 20px;
         float: left;
