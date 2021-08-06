@@ -32,11 +32,18 @@ export default {
         status: 'closed',
         username: "User@server.com",
         timecreated: "2021년 00월 00일 00:00",
-        timeleft: "00:00:00",
-        picrewlink: "https://picrew.me/image_maker/614354",
-        thumbnailsrc: "https://s3-ap-northeast-2.amazonaws.com/mastodon-planet-moe/cache/preview_cards/images/000/170/295/original/70bd094986a23b72.png",
     })
 }
 </script>
 
-<!--가져온 vue 파일에 포함된 바인딩 태그가 표시되지 않는 오류-->
+<style>
+h1 {
+    margin-bottom: 10px;
+}
+header {
+    margin-bottom: 50px;
+}
+header > p, article {
+    margin-left: 30px;
+}
+</style>

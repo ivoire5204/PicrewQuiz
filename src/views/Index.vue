@@ -11,10 +11,13 @@
                 <v-btn id="creategamebtn">새 게임 생성하기</v-btn>
             </router-link>
         </section>
-        <section id="nowplaying">
+        <section id="nowplaying" style="float: none;">
             <h3>진행중인 게임</h3>
-            <v-btn class="arrowbtn" elevation="0" fab>&#60;</v-btn>
-            <div class="contentbox" v-for="(content, index) in nowplaying" v-bind:key="index">
+            <div class="btncontainer left">
+                <v-btn elevation="0" fab>&#60;</v-btn>
+            </div>
+            <div class="scrollbox"> <!--하나도 바인딩되지 않음-->
+                <div v-for="(content, index) in nowplaying" v-bind:key="index">
                 <router-link to="/000000000000">
                     <v-img class="thumbnail" v-bind:src="content.thumbnailsrc"></v-img>
                     <p>{{ content.username }}님의 게임</p>
@@ -22,22 +25,32 @@
                 <p><a href="picrewlink">{{ content.picrewlink }}</a></p>
                 <p>{{ content.status }}</p>
                 <p>남은 시간 {{ content.timeleft }}</p>
+                </div>
             </div>
-            <v-btn class="arrowbtn" elevation="0" fab>&#62;</v-btn>
+            <div class="btncontainer right">
+                <v-btn elevation="0" fab>&#62;</v-btn>
+            </div>
         </section>
+        <br style="clear: left;">
         <section id="archives">
             <h3>아카이브</h3>
-            <v-btn class="arrowbtn" elevation="0" fab>&#60;</v-btn>
-            <div class="contentbox" v-for="(content, index) in archives" v-bind:key="index">
-                <router-link to="/000000000000">
-                    <v-img class="thumbnail" v-bind:src="content.thumbnailsrc"></v-img>
-                    <p>{{ content.username }}님의 게임</p>
-                </router-link>
-                <p><a href="picrewlink">{{ content.picrewlink }}</a></p>
-                <p>{{ content.status }}</p>
-                <p>남은 시간 {{ content.timeleft }}</p>
+            <div class="btncontainer left">
+                <v-btn elevation="0" fab>&#60;</v-btn>
             </div>
-            <v-btn class="arrowbtn" elevation="0" fab>&#62;</v-btn>
+            <div class="scrollbox">
+                <div v-for="(content, index) in archives" v-bind:key="index">
+                    <router-link to="/000000000000">
+                        <v-img class="thumbnail" v-bind:src="content.thumbnailsrc"></v-img>
+                        <p>{{ content.username }}님의 게임</p>
+                    </router-link>
+                    <p><a href="picrewlink">{{ content.picrewlink }}</a></p>
+                    <p>{{ content.status }}</p>
+                    <p>남은 시간 {{ content.timeleft }}</p>
+                </div>
+            </div>
+            <div class="btncontainer right">
+                <v-btn elevation="0" fab>&#62;</v-btn>
+            </div>
         </section>
     </div>
 </template>
@@ -103,41 +116,5 @@ export default {
 </script>
 
 <style>
-    h1 {
-        margin: 30px 30px 50px 30px;
-        /* 스타일 적용 안 됨 오류 */
-    }
-    #introduction {
-       margin: 0px 30px 90px 30px;
-    }
-    h3 {
-        margin-bottom: 20px;
-    }
-    #introduction > p {
-        margin-bottom: 40px;
-    }
-    #nowplaying, #archives {
-        margin: 0px 30px 90px 30px;
-        padding-bottom: 300px;
-    }
-    #creategamebtn {
-        margin: 0px;
-    }
-    .contentbox {
-        border: 1px solid;
-        width: 250px;
-        height: 300px;
-        text-align: center;
-        margin: 0px 20px;
-        float: left;
-    }
-    .arrowbtn {
-        float: left;
-        background-color: #00000000;
-        font-size: 30px;
-    }
-    .thumbnail {
-        width: 200px;
-        margin: 0px auto;
-    }
+    @import "Index.css";
 </style>

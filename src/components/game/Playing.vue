@@ -47,6 +47,13 @@ export default {
         timeleft: "00:00:00",
         picrewlink: "https://picrew.me/image_maker/614354",
         thumbnailsrc: "https://s3-ap-northeast-2.amazonaws.com/mastodon-planet-moe/cache/preview_cards/images/000/170/295/original/70bd094986a23b72.png",
+        gamecontent: {
+            thumbnailsrc: "https://s3-ap-northeast-2.amazonaws.com/mastodon-planet-moe/cache/preview_cards/images/000/170/295/original/70bd094986a23b72.png",
+            username: "User@server.com",
+            picrewlink: "https://picrew.me/image_maker/614354",
+            status: "신청 받는 중",
+            timeleft: "00:00:00"
+        }
     })
 }
 </script>

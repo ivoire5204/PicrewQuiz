@@ -3,7 +3,7 @@
         <p id="status">이미 종료된 게임이에요!</p>
         <div id="gallery">
             <v-btn id="leftarrow" elevation="0" fab>&#60;</v-btn>
-            <div class="gamecontent" v-bind="gamedata">
+            <div class="gamecontent">
                 <!--v-for 사용-->
                 <v-img src=""></v-img>
                 <!--유저 이름 태그-->
@@ -40,7 +40,12 @@ export default {
     },
     data: () => ({
         picrewlink: "https://picrew.me/image_maker/614354",
-        thumbnailsrc: "https://s3-ap-northeast-2.amazonaws.com/mastodon-planet-moe/cache/preview_cards/images/000/170/295/original/70bd094986a23b72.png"
+        thumbnailsrc: "https://s3-ap-northeast-2.amazonaws.com/mastodon-planet-moe/cache/preview_cards/images/000/170/295/original/70bd094986a23b72.png",
+        appliers: [
+            "Ann@server.com",
+            "Bob@server.com",
+            "Charlie@server.com"
+        ]
     })
 }
 </script>
