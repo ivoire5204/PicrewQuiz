@@ -11,13 +11,13 @@
                 <v-btn id="creategamebtn">새 게임 생성하기</v-btn>
             </router-link>
         </section>
-        <section id="nowplaying" style="float: none;">
+        <section id="nowplaying">
             <h3>진행중인 게임</h3>
             <div class="btncontainer left">
                 <v-btn elevation="0" fab>&#60;</v-btn>
             </div>
-            <div class="scrollbox"> <!--하나도 바인딩되지 않음-->
-                <div v-for="(content, index) in nowplaying" v-bind:key="index">
+            <div class="slidebox"> <!--하나도 바인딩되지 않음-->
+                <div class="slidecontent" v-for="(content, index) in nowplaying" v-bind:key="index">
                 <router-link to="/000000000000">
                     <v-img class="thumbnail" v-bind:src="content.thumbnailsrc"></v-img>
                     <p>{{ content.username }}님의 게임</p>
@@ -31,14 +31,13 @@
                 <v-btn elevation="0" fab>&#62;</v-btn>
             </div>
         </section>
-        <br style="clear: left;">
         <section id="archives">
             <h3>아카이브</h3>
             <div class="btncontainer left">
                 <v-btn elevation="0" fab>&#60;</v-btn>
             </div>
-            <div class="scrollbox">
-                <div v-for="(content, index) in archives" v-bind:key="index">
+            <div class="slidebox">
+                <div class="slidecontent" v-for="(content, index) in archives" v-bind:key="index">
                     <router-link to="/000000000000">
                         <v-img class="thumbnail" v-bind:src="content.thumbnailsrc"></v-img>
                         <p>{{ content.username }}님의 게임</p>
