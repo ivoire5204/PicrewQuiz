@@ -54,9 +54,6 @@ h3 {
 .theme--light.v-btn.v-btn--has-bg {
     background-color: #00000000;
 } /*.btncontainer > button으로 적용 안 되고 이렇게 써야 적용됨. 왜?*/
-.v-btn.v-size--default {
-    font-size: 30px;
-} /*이것도*/
 .btncontainer.left {
     left: 0px;
 }

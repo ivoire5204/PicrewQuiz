@@ -29,7 +29,7 @@ export default {
     },
     data: () => ({
         // 서버에서 status 값 가져오기
-        status: 'closed',
+        status: 'playing',
         username: "User@server.com",
         timecreated: "2021년 00월 00일 00:00",
     })
