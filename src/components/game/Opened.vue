@@ -2,9 +2,12 @@
     <div>
         <p id="timeleft">참가 신청 시간이 {{ timeleft }} 남았어요!</p>
         <p><a v-bind:href="picrewlink">이 링크</a>의 픽크루 템플릿을 통해 당신의 개성을 표현해주세요!</p>
-        <a v-bind:href="picrewlink">
-            <v-img id="thumbnail" v-bind:src="thumbnailsrc"></v-img>
+        <p>
+            <a v-bind:href="picrewlink">
+            <img id="thumbnail" v-bind:src="thumbnailsrc">
         </a> <!--이미지 바인딩 안 됨 오류-->
+
+        </p>
         <v-form>
             <v-row>
                 당신의 개성이 담긴 그림을 업로드해주세요!
@@ -35,7 +38,7 @@ export default {
     data: () => ({
         timeleft: "00:00:00",
         picrewlink: "https://picrew.me/image_maker/614354",
-        thumbnailsrc: "https://s3-ap-northeast-2.amazonaws.com/mastodon-planet-moe/cache/preview_cards/images/000/170/295/original/70bd094986a23b72.png",
+        thumbnailsrc: "https://cdn.picrew.me/app/image_maker/947708/icon_PiRTf3Af16vdKlKs.png",
     })
 }
 </script>

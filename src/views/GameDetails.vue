@@ -16,7 +16,7 @@
             </span>
         </article>
     </div>
-</template>
+</template> 
 
 <script> 
 import Opened from '../components/game/Opened.vue'

@@ -16,15 +16,15 @@
             <div class="btncontainer left">
                 <v-btn elevation="0" fab>&#60;</v-btn>
             </div>
-            <div class="slidebox"> <!--하나도 바인딩되지 않음-->
+            <div class="slidebox">
                 <div class="slidecontent" v-for="(content, index) in nowplaying" v-bind:key="index">
                 <router-link to="/000000000000">
-                    <v-img class="thumbnail" v-bind:src="content.thumbnailsrc"></v-img>
-                    <p>{{ content.username }}님의 게임</p>
+                    <img class="thumbnail" v-bind:src="content.content.thumbnailsrc">
+                    <p>{{ content.content.username }}님의 게임</p>
                 </router-link>
-                <p><a href="picrewlink">{{ content.picrewlink }}</a></p>
-                <p>{{ content.status }}</p>
-                <p>남은 시간 {{ content.timeleft }}</p>
+                <p><a v-bind:href="content.content.picrewlink">{{ content.content.picrewlink }}</a></p>
+                <p>{{ content.content.status }}</p>
+                <p>남은 시간 {{ content.content.timeleft }}</p>
                 </div>
             </div>
             <div class="btncontainer right">
@@ -39,12 +39,10 @@
             <div class="slidebox">
                 <div class="slidecontent" v-for="(content, index) in archives" v-bind:key="index">
                     <router-link to="/000000000000">
-                        <v-img class="thumbnail" v-bind:src="content.thumbnailsrc"></v-img>
-                        <p>{{ content.username }}님의 게임</p>
+                        <img class="thumbnail" v-bind:src="content.content.thumbnailsrc">
+                        <p>{{ content.content.username }}님의 게임</p>
                     </router-link>
-                    <p><a href="picrewlink">{{ content.picrewlink }}</a></p>
-                    <p>{{ content.status }}</p>
-                    <p>남은 시간 {{ content.timeleft }}</p>
+                    <p><a v-bind:href="content.content.picrewlink">{{ content.content.picrewlink }}</a></p>
                 </div>
             </div>
             <div class="btncontainer right">
@@ -65,21 +63,21 @@ export default {
     data: () => ({
         nowplaying: [
             { content: {
-                    thumbnailsrc: "https://s3-ap-northeast-2.amazonaws.com/mastodon-planet-moe/cache/preview_cards/images/000/170/295/original/70bd094986a23b72.png",
+                    thumbnailsrc: "https://cdn.picrew.me/app/image_maker/947708/icon_PiRTf3Af16vdKlKs.png",
                     username: "User@server.com",
                     picrewlink: "https://picrew.me/image_maker/614354",
                     status: "신청 받는 중",
                     timeleft: "00:00:00"
             }},
             { content: {
-                    thumbnailsrc: "https://s3-ap-northeast-2.amazonaws.com/mastodon-planet-moe/cache/preview_cards/images/000/170/295/original/70bd094986a23b72.png",
+                    thumbnailsrc: "https://cdn.picrew.me/app/image_maker/947708/icon_PiRTf3Af16vdKlKs.png",
                     username: "User@server.com",
                     picrewlink: "https://picrew.me/image_maker/614354",
                     status: "신청 받는 중",
                     timeleft: "00:00:00"
             }},
             { content: {
-                    thumbnailsrc: "https://s3-ap-northeast-2.amazonaws.com/mastodon-planet-moe/cache/preview_cards/images/000/170/295/original/70bd094986a23b72.png",
+                    thumbnailsrc: "https://cdn.picrew.me/app/image_maker/947708/icon_PiRTf3Af16vdKlKs.png",
                     username: "User@server.com",
                     picrewlink: "https://picrew.me/image_maker/614354",
                     status: "신청 받는 중",
@@ -88,25 +86,19 @@ export default {
         ],
         archives: [
             { content: {
-                    thumbnailsrc: "https://s3-ap-northeast-2.amazonaws.com/mastodon-planet-moe/cache/preview_cards/images/000/170/295/original/70bd094986a23b72.png",
+                    thumbnailsrc: "https://cdn.picrew.me/app/image_maker/947708/icon_PiRTf3Af16vdKlKs.png",
                     username: "User@server.com",
                     picrewlink: "https://picrew.me/image_maker/614354",
-                    status: "신청 받는 중",
-                    timeleft: "00:00:00"
             }},
             { content: {
-                    thumbnailsrc: "https://s3-ap-northeast-2.amazonaws.com/mastodon-planet-moe/cache/preview_cards/images/000/170/295/original/70bd094986a23b72.png",
+                    thumbnailsrc: "https://cdn.picrew.me/app/image_maker/947708/icon_PiRTf3Af16vdKlKs.png",
                     username: "User@server.com",
                     picrewlink: "https://picrew.me/image_maker/614354",
-                    status: "신청 받는 중",
-                    timeleft: "00:00:00"
             }},
             { content: {
-                    thumbnailsrc: "https://s3-ap-northeast-2.amazonaws.com/mastodon-planet-moe/cache/preview_cards/images/000/170/295/original/70bd094986a23b72.png",
+                    thumbnailsrc: "https://cdn.picrew.me/app/image_maker/947708/icon_PiRTf3Af16vdKlKs.png",
                     username: "User@server.com",
                     picrewlink: "https://picrew.me/image_maker/614354",
-                    status: "신청 받는 중",
-                    timeleft: "00:00:00"
             }}        
         ]
 
